@@ -135,3 +135,6 @@ data/landing/
 
 # OSX .DS_Store file
 .DS_Store
+
+# other
+scripts/env.py
