@@ -138,3 +138,4 @@ data/landing/
 
 # other
 scripts/env.py
+!*.gitkeep
