@@ -64,14 +64,14 @@ def main():
 
     ######### Public Transport Victoria (PTV) GTFS data
     # TODO: PAUL - Please try and download the PTV data and extract it. Looks like we can get google tranzit data from here
-    # ptv_url = "http://data.ptv.vic.gov.au/downloads/gtfs.zip"
-    # download_file(ptv_url, '../data/raw/gtfs.zip')
-    # create_directory("../data/raw/ptv")
-    # extract_zip("../data/raw/gtfs.zip", "../data/raw/ptv")
+    ptv_url = "http://data.ptv.vic.gov.au/downloads/gtfs.zip"
+    download_file(ptv_url, '../data/raw/gtfs.zip')
+    create_directory("../data/raw/ptv")
+    extract_zip("../data/raw/gtfs.zip", "../data/raw/ptv")
     # # Extract nested zip files in the PTV directory
-    # for i in range(2, 5):
-    #     nested_zip_path = f"../data/raw/ptv/{i}/google_transit.zip"
-    #     extract_zip(nested_zip_path, f"../data/raw/ptv/{i}")
+    for i in range(1, 12):
+        nested_zip_path = f"../data/raw/ptv/{i}/google_transit.zip"
+        extract_zip(nested_zip_path, f"../data/raw/ptv/{i}")
 
     #######################################   income locations  ########################################
     # TODO: Confirm usecase for income location data
