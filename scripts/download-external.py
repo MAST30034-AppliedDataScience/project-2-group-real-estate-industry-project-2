@@ -64,7 +64,7 @@ def main():
 
     ######### Public Transport Victoria (PTV) GTFS data
     # TODO: PAUL - Please try and download the PTV data and extract it. Looks like we can get google tranzit data from here
-    ptv_url = "http://data.ptv.vic.gov.au/downloads/gtfs.zip"
+    ptv_url = "https://data.ptv.vic.gov.au/downloads/gtfs.zip"
     download_file(ptv_url, '../data/raw/gtfs.zip')
     create_directory("../data/raw/ptv")
     extract_zip("../data/raw/gtfs.zip", "../data/raw/ptv")
