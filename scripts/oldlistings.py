@@ -43,6 +43,9 @@ def get_oldlistings_property(p):
     for line in list_of_history.find('ul').find_all('li'):
         record = {}
         record['date'] = line.find('span').text
+        if len(line.contents) == 1:
+            # no price listed, likely to be error entry or default entry when no price is listed
+            continue
         record['price'] = line.contents[1]
         info_dict['rented_prices'].append(record)
 
@@ -56,6 +59,8 @@ def get_oldlistings_page(soup):
     properties = soup.find('div', {'class':"content-col"}).findChildren("div" , recursive=False)
     list_of_properties = []
     for _property in properties:
-        list_of_properties.append(get_oldlistings_property(_property))
+        property_info = get_oldlistings_property(_property)
+        if property_info:
+            list_of_properties.append(property_info)
         # get_info(property)
     return list_of_properties
