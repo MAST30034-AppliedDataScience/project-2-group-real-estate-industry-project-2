@@ -32,5 +32,3 @@ def save_plot(plt: plt, file_name: str):
     - file_name (str): The name of the file to save the plot as.
     """
     plt.savefig(f"../plots/{file_name}.png", dpi=300, bbox_inches='tight')
-
-
