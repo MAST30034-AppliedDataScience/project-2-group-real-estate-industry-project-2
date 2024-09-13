@@ -1,4 +1,4 @@
-# Industry Project - Real Estate Standup 1
+# Industry Project - Real Estate Standup 2
 Minutes (06/09/2024 11:30)
 ## Meeting Attendance
 - Attendees
