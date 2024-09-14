@@ -22,6 +22,7 @@ def main():
 
     create_dir('./data/landing/population/')
     create_dir('./data/landing/income/')
+    create_dir('./data/landing/sa2/')
 
     #### ABS Population Data by SA2 2001-2023
     download_external_data(
@@ -30,14 +31,16 @@ def main():
         'population/population.xlsx'
     )
 
-    #### ABS SA2 Digital Boundary data as of 2021
+    #### ABS SA2 Data
+    # Digital Boundary 2021-2026
     download_external_data(
         "https://www.abs.gov.au/statistics/standards/australian-statistical-"\
             f"geography-standard-asgs-edition-3/jul2021-jun2026/access-and-"\
             f"downloads/digital-boundary-files/SA2_2021_AUST_SHP_GDA2020.zip",
-        'SA2.zip'
+        'sa2/sa2-shp.zip'
     )
-    unzip("./data/landing", "SA2-shapefile", "SA2.zip")
+    unzip("./data/landing/sa2", "sa2-21-shp", "sa2-shp.zip")
+
 
     #### school zone locations 
     download_external_data(
@@ -60,11 +63,20 @@ def main():
         unzip(f"./data/landing/ptv/{i}", f'{i}', "google_transit.zip")
 
     #### Income data
+    # 2012-2016
     download_external_data(
-        f"https://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&14100do"\
-            f"0004_2014-19.xlsx&1410.0&Data%20Cubes&63757E101C2DA1A1CA25862900"\
-            f"10B831&0&2014-19&24.11.2020&Latest",
-        'income/income.xlsx'
+        f"https://www.abs.gov.au/statistics/labour/earnings-and-working-"\
+            f"conditions/personal-income-australia/2011-12-2017-18/6524055002_"\
+            f"DO001.xls",
+        'income/income-2012-2016.xls'
+    )
+    # 2017-2021
+    download_external_data(
+        f"https://www.abs.gov.au/statistics/labour/earnings-and-working-"\
+            f"conditions/personal-income-australia/2020-21-financial-year/"\
+            f"Table%201%20-%20Total%20income%2C%20earners%20and%20summary%20"
+            f"statistics%20by%20geography%2C%202016-17%20to%202020-21.xlsx",
+        'income/income-2017-2021.xlsx'
     )
 
     print(get_runtime(start_time))
