@@ -56,7 +56,10 @@ def get_oldlistings_page(soup):
     soup: a bs4 object containing the page
     return: a list of dictionaries containing the information of all properties in the page
     '''
-    properties = soup.find('div', {'class':"content-col"}).findChildren("div" , recursive=False)
+    properties = soup.find('div', {'class':"content-col"})
+    if not properties:
+        return []
+    properties = properties.findChildren("div" , recursive=False)
     list_of_properties = []
     for _property in properties:
         property_info = get_oldlistings_property(_property)
