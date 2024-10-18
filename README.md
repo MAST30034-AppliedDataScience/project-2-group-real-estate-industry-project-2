@@ -5,7 +5,7 @@ This project aims to provide insights and analysis for the real estate market us
 
 ## Directory Structure
 
-- **/summary**: contains `summary_notebook.ipynb` which provide a comprehensive summary of the project.
+- **summary/**: contains `summary_notebook.ipynb` which provide a comprehensive summary of the project.
 - **data/**: Contains raw, curated, and landing data.
   - **curated/**: Processed and cleaned data.
   - **landing/**: Raw data collected from various sources.
