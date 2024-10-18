@@ -133,5 +133,12 @@ data/curated/
 data/raw/
 data/landing/
 
+# plots
+plots/
+
 # OSX .DS_Store file
 .DS_Store
+
+# other
+scripts/env.py
+!*.gitkeep
